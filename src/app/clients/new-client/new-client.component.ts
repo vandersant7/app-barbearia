@@ -36,6 +36,7 @@ ngOnDestroy(): void {
   }
 
   onSubmitClient (value: ClientModelForm) {
+    console.log(value)
     const {id, ...request} = value;
     this.httpSubscription = this.clientsService.save(request).subscribe(_ => {
       this.snackbarService.show('Usuário cadastrado com sucesso')
